@@ -1,0 +1,889 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../1.%20%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20Selenium/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>2. Навигация браузера и поиск элементов - AQA PROKA4</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AQA PROKA4" class="md-header__button md-logo" aria-label="AQA PROKA4" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AQA PROKA4
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Навигация браузера и поиск элементов
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="deep-purple"  aria-label="Dark Mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark Mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light Mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light Mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Добро пожаловать
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../1.%20%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20Selenium/" class="md-tabs__link">
+          
+  
+  Selenium
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AQA PROKA4" class="md-nav__button md-logo" aria-label="AQA PROKA4" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AQA PROKA4
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Добро пожаловать
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Selenium
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Selenium
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.%20%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20Selenium/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Введение в Selenium
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2. Навигация браузера и поиск элементов
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2. Навигация браузера и поиск элементов
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Навигация браузера
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение заголовка страницы
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение всего содержимого страницы
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение текущего URL страницы
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Валидация через Assert
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Спящий код
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webelement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Что такое WebElement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      Поиск веб-элементов с помощью By
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Поиск нескольких веб-элементов
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-by_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Поиск веб-элементов без By
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Первый клик
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Навигация браузера
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение заголовка страницы
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение всего содержимого страницы
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Получение текущего URL страницы
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Валидация через Assert
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Спящий код
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webelement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Что такое WebElement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      Поиск веб-элементов с помощью By
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Поиск нескольких веб-элементов
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-by_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Поиск веб-элементов без By
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Первый клик
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>2. Навигация браузера и поиск элементов</h1>
+
+<h3 id="_1">Навигация браузера</h3>
+<p><strong>Открытие страницы</strong><br />
+Первое, что вы захотите сделать после того как запустите браузер, это открыть сайт. Это можно сделать используя метод <strong>get()</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://example.ru&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Переход назад по странице</strong><br />
+Часто нажав не туда или просто для удобства, мы используем кнопку "Назад" в браузере. Это та самая стрелочка влево ◀️ около адресной строки браузера. Для того чтобы совершить нажатие нам понадобиться метод <strong>back()</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">back</span><span class="p">()</span>
+</code></pre></div>
+<p><strong>Переход вперед по странице</strong><br />
+В данном случае ситуация аналогична переходу "Назад" по странице, только в этом случае переход по странице совершается вперед. Для этого нам необходимо использовать метод <strong>forward()</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">forward</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="_2">Получение заголовка страницы</h3>
+<p><strong>Перезагрузка страницы</strong><br />
+Очень и очень часто во время работы или простого серфинга сайтов, мы используем кнопку для обновления страницы. Для того чтобы обновить страницу используя Selenium нужно использовать метод <strong>refresh()</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+</code></pre></div>
+<p>Ранее мы разобрали как получить URL-адрес веб-страницы, но иногда нам нужно получать значение тега <strong><titile/></strong> на веб-странице.  </p>
+<p>Как пример все для той же проверки правильного открытия страницы. Это можно сделать обратившись к атрибуту <strong>title</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">title</span>
+</code></pre></div>
+<p>По аналогии с получением URL-адреса, мы можем записать значение title в переменную для дальнейшего использования.</p>
+<div class="highlight"><pre><span></span><code><span class="n">PAGE_TITLE</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">title</span> <span class="c1"># Записываем значение title в переменную page_title</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Title страницы: &quot;</span><span class="p">,</span> <span class="n">PAGE_TITLE</span><span class="p">)</span> <span class="c1"># Выводим значение переменной на экран</span>
+</code></pre></div>
+<h3 id="_3">Получение всего содержимого страницы</h3>
+<p>Чтобы получить весь html-код страницы для дальнейших манипуляций, существует атрибут <strong>page_source</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">PAGE_SOURCE</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">page_source</span> <span class="c1"># Записываем в переменную всю веб-страницу</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">PAGE_SOURCE</span><span class="p">)</span> <span class="c1"># Печатаем HTML-код в терминал</span>
+</code></pre></div>
+<h3 id="url">Получение текущего URL страницы</h3>
+<p>В дальнейшем, вам пригодится команда для получения URL-адреса страницы из адресной строки браузера, например для того чтобы убедиться в том, что действительно открыта нужная вам веб-страница.  </p>
+<p>Это можно сделать обратившись к атрибуту <strong>current_url</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">current_url</span>
+</code></pre></div>
+<p>Для удобства Вы можете записать его в переменную для дальнейшего использования:</p>
+<div class="highlight"><pre><span></span><code><span class="n">PAGE_URL</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">current_url</span> <span class="c1"># Получаем текущий URL-адрес в переменную</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">PAGE_URL</span><span class="p">)</span> <span class="c1"># Выводим значение переменной</span>
+</code></pre></div>
+<h3 id="assert">Валидация через Assert</h3>
+<p>В автоматизации, нам необходимо проверять правдивость данных, соответствуют ли они ожидаемому результату или нет. Для этого используются либо условные операторы, либо чуть более интересная конструкция называемая <strong>assert.</strong>  </p>
+<p>Данная конструкция имеет следующий вид:</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">assert</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">,</span> <span class="s2">&quot;A не равно Б&quot;</span>
+</code></pre></div>
+<p>Т.е если утверждение правдивое, то все хорошо, если же нет, то будет ошибка с указанным после запятой текстом.  </p>
+<p>Давайте рассмотрим более реальный пример, предположим, что мы заранее знаем Title страницы, например для страницы <strong>https://dzen.ru/</strong>  </p>
+<p>title - в данном случае <strong>“Дзен”</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://dzen.ru&quot;</span><span class="p">)</span> <span class="c1"># Открываем страницу</span>
+
+<span class="k">assert</span> <span class="n">driver</span><span class="o">.</span><span class="n">title</span> <span class="o">==</span> <span class="s2">&quot;Дзен&quot;</span><span class="p">,</span> <span class="s2">&quot;Страница не открылась&quot;</span>
+</code></pre></div>
+<h3 id="_4">Спящий код</h3>
+<p>Зачастую для проверки каких-то вещей руками, нужно притормозить код, чтобы успеть сделать действия в браузере руками. Для таких целей необходимо импортировать модуль time и его метод <strong>time.sleep()</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># В качестве аргумента принимает кол-во секнуд для паузы</span>
+</code></pre></div>
+<h3 id="webelement">Что такое WebElement</h3>
+<p>Поиск элементов на странице будет занимать немалую часть времени всего процесса автоматизации, поэтому этой теме нужно уделить особое внимание.  </p>
+<p>Начнем с определения того, что такое элемент с точки зрения автоматизации и с точки зрения самого Selenium.  </p>
+<blockquote>
+<p><strong>WebElement</strong> - это любой объект на странице найденный с помощью Selenium, такой как кнопка, поле ввода и т.д. Самое важное, что это объект, который имеет тип: <strong>WebElement</strong> (нужно просто это понимать).</p>
+</blockquote>
+<h3 id="-by">Поиск веб-элементов с помощью By</h3>
+<p>Существует множество способов поиска элементов на странице, мы рассмотрим самые удобные и эффективные.  </p>
+<p>Первое что стоит изучить, это принцип поиска по простейшим атрибутам, возьмем к примеру:  </p>
+<ol>
+<li>ID</li>
+<li>CLASS_NAME</li>
+<li>TAG_NAME</li>
+</ol>
+<p>Для начала работы, нам необходимо импортировать новый для нас модуль <strong>By</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+</code></pre></div>
+<p>Отлично, теперь мы готовы к свершениям и в первую очередь научимся искать один веб-элемент.</p>
+<p><strong>Поиск одного элемента</strong><br />
+Для поиска одного элемента, у обьекта <strong>driver</strong> есть специальный метод <strong>find_element()</strong>.  </p>
+<p>Аргументы метода:  </p>
+<ul>
+<li><strong>Способ поиска</strong> - например, используя наш новый модуль By: <strong>By.ID</strong></li>
+<li><strong>Значение атрибута</strong> - указывается значение атрибута в соотвествии со способом поиска</li>
+</ul>
+<p>Разберем пример, при котором мы ищем ниже описанное поле ввода input:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nb">input</span> <span class="nb">id</span><span class="o">=</span><span class="err">”</span><span class="n">login_field</span><span class="err">”</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;login&quot;</span><span class="o">/&gt;</span>
+</code></pre></div>
+<p>Посмотрим на несколько примеров поиска по ранее упомянутым атрибутам</p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s2">&quot;login_field&quot;</span><span class="p">)</span> <span class="c1"># Поиск по id атрибуту</span>
+
+<span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">CLASS_NAME</span><span class="p">,</span> <span class="s2">&quot;login&quot;</span><span class="p">)</span> <span class="c1"># Поиск по имени класса</span>
+
+<span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">TAG_NAME</span><span class="p">,</span> <span class="s2">&quot;input&quot;</span><span class="p">)</span> <span class="c1"># Поиск по имени тега</span>
+</code></pre></div>
+<p><strong>Но что же вернет мне результат поиска элемента?</strong><br />
+Ранее мы познакомились с таким обьектом как WebElement, давайте посмотрим как он выглядит.  </p>
+<p>Для начала выполним простой код для поиска элемента:</p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://testautomationpractice.blogspot.com&quot;</span><span class="p">)</span> <span class="c1"># Откроем тестовую страницу</span>
+
+<span class="n">ELEMENT</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s2">&quot;Wikipedia1_wikipedia-search-input&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ELEMENT</span><span class="p">)</span>
+</code></pre></div>
+<p>В результате вывода мы получим следующую картину:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">selenium</span><span class="o">.</span><span class="n">webdriver</span><span class="o">.</span><span class="n">remote</span><span class="o">.</span><span class="n">webelement</span><span class="o">.</span><span class="n">WebElement</span> <span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="s2">&quot;7285b48ff604d43b1e6c42166802cd00&quot;</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s2">&quot;e56e1acc-e470-4463-b76f-46e8b20b69a7&quot;</span><span class="p">)</span><span class="o">&gt;</span>
+</code></pre></div>
+<p>Вот таким образом и выглядит наш обьект с типом WebElement</p>
+<h3 id="-">Поиск нескольких веб-элементов</h3>
+<p>Мы уже научились искать один элемент, но иногда, нам понадобиться найти множество элементов, и сделать это можно с помощью метода <strong>find_elements().</strong>  </p>
+<p>Данный метод имеет те же аргументы, что и <strong>find_element()</strong>, но главное различие в том, что <strong>find_elements()</strong> возвращает список элементов.  </p>
+<p>Пример:</p>
+<div class="highlight"><pre><span></span><code><span class="n">LIST_OF_H1_TAGS</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">TAG_NAME</span><span class="p">,</span> <span class="s2">&quot;h2&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">LIST_OF_H1_TAGS</span><span class="p">)</span>
+</code></pre></div>
+<p>В результате мы получим стандартный список, в котором будут лежать все веб-элементы имеющий тег <strong>h2</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="o">&lt;</span><span class="n">selenium</span><span class="o">.</span><span class="n">webdriver</span><span class="o">.</span><span class="n">remote</span><span class="o">.</span><span class="n">webelement</span><span class="o">.</span><span class="n">WebElement</span> <span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="s2">&quot;aa2baed948cbe55eedad6d34832f571a&quot;</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s2">&quot;b4573195-37c8-4300-a474-a7b0e459bb50&quot;</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="o">&lt;</span><span class="n">selenium</span><span class="o">.</span><span class="n">webdriver</span><span class="o">.</span><span class="n">remote</span><span class="o">.</span><span class="n">webelement</span><span class="o">.</span><span class="n">WebElement</span> <span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="s2">&quot;aa2baed948cbe55eedad6d34832f571a&quot;</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s2">&quot;6f7520e1-9dda-4b7f-8c66-73f464a107f3&quot;</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="o">&lt;</span><span class="n">selenium</span><span class="o">.</span><span class="n">webdriver</span><span class="o">.</span><span class="n">remote</span><span class="o">.</span><span class="n">webelement</span><span class="o">.</span><span class="n">WebElement</span> <span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="s2">&quot;aa2baed948cbe55eedad6d34832f571a&quot;</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s2">&quot;2d40c5e9-4a00-4a7d-a367-b99af8aea06b&quot;</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,]</span>
+</code></pre></div>
+<p><strong>Как можно работать с таким списком?</strong><br />
+Да как и с обычными списками в Python, например мы хотим спарсить все <strong>h2</strong> заголовки со страницы:</p>
+<div class="highlight"><pre><span></span><code><span class="n">elements</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">TAG_NAME</span><span class="p">,</span> <span class="s2">&quot;h2&quot;</span><span class="p">)</span> <span class="c1"># Находим все элементы h2</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">:</span> <span class="c1"># Перебираем список элементов h2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="c1"># Выводим текст элементов h2</span>
+</code></pre></div>
+<p>Тут можно заметить, что я получаю атрибут <strong>text</strong>, он существует у всех элементов в которых содержится какой-либо текст, что логично)  </p>
+<p>Или к примеру, если мы хотим получить определенный веб-элемент из списка, то просто обращаемся по индексу</p>
+<div class="highlight"><pre><span></span><code><span class="n">ELEMENTS</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_elements</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">TAG_NAME</span><span class="p">,</span> <span class="s2">&quot;h2&quot;</span><span class="p">)</span> <span class="c1"># Находим все элементы h2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ELEMENTS</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</code></pre></div>
+<h3 id="-by_1">Поиск веб-элементов без By</h3>
+<p>Ранее мы использовали стандартные методы, затем научились использовать пакет <strong>By,</strong> но существует еще один способ, как по мне, он максимальной прост, понятен и удобен.  </p>
+<p>Тут все просто, сразу приведу пример:</p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;login_field&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>То есть вместо пакета <strong>By</strong>, мы используем текстовые значения и нет необходимости делать какие либо дополнительные импорты.  </p>
+<p>Список обозначений для использования вместо <strong>By</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ID</span> <span class="o">=</span> <span class="s2">&quot;id&quot;</span>
+<span class="n">XPATH</span> <span class="o">=</span> <span class="s2">&quot;xpath&quot;</span>
+<span class="n">LINK_TEXT</span> <span class="o">=</span> <span class="s2">&quot;link text&quot;</span>
+<span class="n">PARTIAL_LINK_TEXT</span> <span class="o">=</span> <span class="s2">&quot;partial link text&quot;</span>
+<span class="n">NAME</span> <span class="o">=</span> <span class="s2">&quot;name&quot;</span>
+<span class="n">TAG_NAME</span> <span class="o">=</span> <span class="s2">&quot;tag name&quot;</span>
+<span class="n">CLASS_NAME</span> <span class="o">=</span> <span class="s2">&quot;class name&quot;</span>
+<span class="n">CSS_SELECTOR</span> <span class="o">=</span> <span class="s2">&quot;css selector&quot;</span>
+</code></pre></div>
+<h3 id="_5">Первый клик</h3>
+<p>Основываясь на изученном ранее поиске элементов давайте научимся самому важному способам манипуляции с веб-элементами, клику!  </p>
+<p>Клик на элемент применяется непосредственно к найденному элементу страницы и имеет специальный метод <strong>click()</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">SEARCH_BUTTON</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;example&quot;</span><span class="p">)</span> <span class="c1"># Поиск элемента</span>
+
+<span class="n">SEARCH_BUTTON</span><span class="o">.</span><span class="n">click</span><span class="p">()</span> <span class="c1"># Клик по элементу</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../1.%20%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20Selenium/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. Введение в Selenium">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                1. Введение в Selenium
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.footer", "header.autohide", "navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
